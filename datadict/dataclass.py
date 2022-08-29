@@ -3,7 +3,11 @@
 # Standard library imports
 import dataclasses
 
+# Third party imports
+from typing_extensions import dataclass_transform
 
+
+@dataclass_transform()
 def dataclass(cls=None, **kwargs):
     """Add item access to attributes"""
 
