@@ -1,14 +1,13 @@
 [build-system]
-requires = ["flit"]
-build-backend = "flit.buildapi"
+requires      = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
 
-[tool.flit.metadata]
-module = "datadict"
-author = "Geir Arne Hjelle"
-author-email = "geirarne@gmail.com"
-home-page = "https://github.com/gahjelle/datadict"
-description-file   = "README.md"
-classifiers        = [
+[project]
+name = "datadict"
+authors = [{ name = "Geir Arne Hjelle", email = "geirarne@gmail.com" }]
+dynamic = ["version", "description"]
+readme = "README.md"
+classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -20,36 +19,64 @@ classifiers        = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development :: Code Generators",
 ]
-keywords           = "dataclass dict dictionary item access"
+license.file = "LICENSE"
+keywords = ["dataclass", "dict", "dictionary", "item", "access"]
+requires-python = ">=3.7"
+dependencies = ["typing_extensions"]
 
-# Requirements
-requires-python    = ">=3.7"
-requires           = [
-    "typing_extensions",
+[project.optional-dependencies]
+dev = [
+    "black",
+    "bumpversion",
+    "flake8",
+    "flit",
+    "interrogate",
+    "isort",
+    "mypy",
+    "pre-commit",
+    "pyright",
+]
+doc = ["mkdocs"]
+test = [
+    "black",
+    "flake8",
+    "interrogate",
+    "isort",
+    "mypy",
+    "pyright",
+    "pytest",
+    "pytest-cov",
+    "tox",
 ]
 
-
-[tool.flit.metadata.requires-extra]
-dev                = ["black", "bumpversion", "flake8", "flit", "interrogate", "isort", "mypy", "pre-commit", "pyright"]
-doc                = ["mkdocs"]
-test               = ["black", "flake8", "interrogate", "isort", "mypy", "pyright", "pytest", "pytest-cov", "tox"]
+[project.urls]
+Homepage = "https://github.com/gahjelle/datadict"
 
 
 [tool.interrogate]
 ignore-init-method = false
 ignore-init-module = false
-ignore-magic = false
+ignore-magic       = false
 ignore-semiprivate = false
-ignore-private = false
-ignore-module = false
-fail-under = 100
-verbose = 0
+ignore-private     = false
+ignore-module      = false
+fail-under         = 100
+verbose            = 0
+
+
+[tool.isort]
+profile                   = "black"
+import_heading_stdlib     = "Standard library imports"
+import_heading_thirdparty = "Third party imports"
+import_heading_firstparty = "DataDict imports"
+
 
 [tool.pyright]
-include = ["tests"]
-typeCheckingMode = "off"
+include                 = ["tests"]
+typeCheckingMode        = "off"
 reportGeneralTypeIssues = "error"
-reportMissingImports = "none"
+reportMissingImports    = "none"

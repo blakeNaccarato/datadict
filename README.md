@@ -4,6 +4,7 @@ _Treat dataclasses like dictionaries_
 
 [![v0.1.0](https://img.shields.io/pypi/v/datadict.svg)](https://pypi.org/project/datadict/)
 [![Python versions](https://img.shields.io/pypi/pyversions/datadict.svg)](https://pypi.org/project/datadict/)
+[![Tests](https://img.shields.io/github/workflow/status/gahjelle/datadict/tests?label=tests)](https://github.com/realpython/codetiming/actions)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Interrogate](https://raw.githubusercontent.com/gahjelle/datadict/master/interrogate_badge.svg)](https://interrogate.readthedocs.io/)
 
@@ -28,7 +29,7 @@ class Point:
     y: int
 ```
 
-For instances of the new dataclass, you can access attributes using square brackets, similar to dictionary access:
+For instances of the new data class, you can access attributes using square brackets, similar to dictionary access:
 
 ```python
 >>> point = Point(1, 2)
@@ -55,12 +56,12 @@ You can also convert the dataclass instance to a proper dictionary:
 
 ## Installing From Source
 
-You can always download the [latest version of DataDict from GitHub](https://github.com/gahjelle/datadict). DataDict uses [Flit](https://flit.readthedocs.io/) as a setup tool.
+You can always download the [latest version of DataDict from GitHub](https://github.com/gahjelle/datadict). DataDict uses [Flit](https://flit.pypa.io/) as a build tool.
 
-To install DataDict from the downloaded source, run Flit:
+To install DataDict from the downloaded source, run Flit through `pip`:
 
-    $ python -m flit install --deps production
+    $ python -m pip install .
 
 If you want to change and play with the DataDict source code, you should install it in editable mode:
 
-    $ python -m flit install --symlink
+    $ python -m pip install -w .[dev,test]
