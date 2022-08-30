@@ -16,26 +16,26 @@ classifiers        = [
     "Operating System :: MacOS",
     "Operating System :: Microsoft",
     "Operating System :: POSIX :: Linux",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development :: Code Generators",
 ]
 keywords           = "dataclass dict dictionary item access"
 
 # Requirements
-requires-python    = ">=3.6"
+requires-python    = ">=3.7"
 requires           = [
-    "dataclasses; python_version < '3.7'",
+    "typing_extensions",
 ]
 
 
 [tool.flit.metadata.requires-extra]
-dev                = ["black", "bumpversion", "flake8", "flit", "interrogate", "isort", "mypy", "pre-commit"]
+dev                = ["black", "bumpversion", "flake8", "flit", "interrogate", "isort", "mypy", "pre-commit", "pyright"]
 doc                = ["mkdocs"]
-test               = ["black", "flake8", "interrogate", "isort", "mypy", "pytest", "pytest-cov", "tox"]
+test               = ["black", "flake8", "interrogate", "isort", "mypy", "pyright", "pytest", "pytest-cov", "tox"]
 
 
 [tool.interrogate]
@@ -47,3 +47,9 @@ ignore-private = false
 ignore-module = false
 fail-under = 100
 verbose = 0
+
+[tool.pyright]
+include = ["tests"]
+typeCheckingMode = "off"
+reportGeneralTypeIssues = "error"
+reportMissingImports = "none"
