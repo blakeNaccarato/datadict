@@ -6,7 +6,7 @@ from datadict.dataclass import dataclass  # noqa
 # Version of DataDict
 #
 # This is automatically set using the bumpversion tool
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 
 # Homepage for DataDict

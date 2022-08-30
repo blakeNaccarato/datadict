@@ -2,7 +2,7 @@
 
 _Treat dataclasses like dictionaries_
 
-[![v0.1.0](https://img.shields.io/pypi/v/datadict.svg)](https://pypi.org/project/datadict/)
+[![v1.0.0](https://img.shields.io/pypi/v/datadict.svg)](https://pypi.org/project/datadict/)
 [![Python versions](https://img.shields.io/pypi/pyversions/datadict.svg)](https://pypi.org/project/datadict/)
 [![Tests](https://img.shields.io/github/workflow/status/gahjelle/datadict/tests?label=tests)](https://github.com/realpython/codetiming/actions)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
