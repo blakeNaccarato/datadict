@@ -33,9 +33,9 @@ requires           = [
 
 
 [tool.flit.metadata.requires-extra]
-dev                = ["black", "bumpversion", "flake8", "flit", "interrogate", "isort", "mypy", "pre-commit"]
+dev                = ["black", "bumpversion", "flake8", "flit", "interrogate", "isort", "mypy", "pre-commit", "pyright"]
 doc                = ["mkdocs"]
-test               = ["black", "flake8", "interrogate", "isort", "mypy", "pytest", "pytest-cov", "tox"]
+test               = ["black", "flake8", "interrogate", "isort", "mypy", "pyright", "pytest", "pytest-cov", "tox"]
 
 
 [tool.interrogate]
@@ -49,7 +49,7 @@ fail-under = 100
 verbose = 0
 
 [tool.pyright]
-include=["tests"]
-typeCheckingMode= "off"
+include = ["tests"]
+typeCheckingMode = "off"
 reportGeneralTypeIssues = "error"
 reportMissingImports = "none"
